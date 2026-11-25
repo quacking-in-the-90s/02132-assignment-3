@@ -36,42 +36,7 @@ class Accelerator extends Module {
       }
     }
     is(read) {
-      when(addressReg < 21.U || addressReg >= 379.U
-        || addressReg === 60.U
-        || addressReg === 40.U
-        || addressReg === 80.U
-        || addressReg === 100.U
-        || addressReg === 120.U
-        || addressReg === 140.U
-        || addressReg === 160.U
-        || addressReg === 180.U
-        || addressReg === 200.U
-        || addressReg === 220.U
-        || addressReg === 240.U
-        || addressReg === 260.U
-        || addressReg === 280.U
-        || addressReg === 300.U
-        || addressReg === 320.U
-        || addressReg === 340.U
-        || addressReg === 360.U
-        || addressReg === 49.U
-        || addressReg === 69.U
-        || addressReg === 89.U
-        || addressReg === 109.U
-        || addressReg === 129.U
-        || addressReg === 149.U
-        || addressReg === 169.U
-        || addressReg === 189.U
-        || addressReg === 209.U
-        || addressReg === 229.U
-        || addressReg === 249.U
-        || addressReg === 269.U
-        || addressReg === 289.U
-        || addressReg === 309.U
-        || addressReg === 329.U
-        || addressReg === 349.U
-        || addressReg === 369.U
-      ) {
+      when(addressReg < 21.U || addressReg >= 379.U || addressReg === 60.U || addressReg === 40.U || addressReg === 80.U || addressReg === 100.U || addressReg === 120.U || addressReg === 140.U || addressReg === 160.U || addressReg === 180.U || addressReg === 200.U || addressReg === 220.U || addressReg === 240.U || addressReg === 260.U || addressReg === 280.U || addressReg === 300.U || addressReg === 320.U || addressReg === 340.U || addressReg === 360.U || addressReg === 49.U || addressReg === 69.U || addressReg === 89.U || addressReg === 109.U || addressReg === 129.U || addressReg === 149.U || addressReg === 169.U || addressReg === 189.U || addressReg === 209.U || addressReg === 229.U || addressReg === 249.U || addressReg === 269.U || addressReg === 289.U || addressReg === 309.U || addressReg === 329.U || addressReg === 349.U || addressReg === 369.U) {
         io.address := addressReg + 400.U
         io.writeEnable := true.B
         io.dataWrite := 0.U
@@ -180,6 +145,7 @@ class Accelerator extends Module {
     }
     is(done) {
       io.done := true.B;
+      stateReg := idle
     }
   }
 }
